@@ -1,8 +1,6 @@
 #!/bin/bash
 
 dwmblocks &
-# Wallpaper
-feh --bg-scale /home/juan/MEGA/Wallpapers/wallpapers/0290.jpg
 # Network
 nm-applet &
 # Automount Devices

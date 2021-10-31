@@ -65,14 +65,14 @@ static const char window_border[] = "#000000";
 
 static const char *colors[][3] = {
     // fg                 bg             border   
-    /* { material.inactive, material.bg, window_border }, */
-    /* { material.active, material.focus,  material.focus  }, */
+    { onedark.inactive, onedark.bg, window_border },
+    { onedark.active, onedark.focus,  onedark.focus  },
 
-    /* { onedark.inactive, onedark.bg, window_border }, */
-    /* { onedark.active, onedark.focus,  onedark.focus  }, */
+    { material.inactive, material.bg, window_border },
+    { material.active, material.focus,  material.focus  },
 
-    /* { nord.inactive, nord.bg, window_border }, */
-    /* { nord.active, nord.focus,  nord.focus  }, */
+    { nord.inactive, nord.bg, window_border },
+    { nord.active, nord.focus,  nord.focus  },
 
     { monokai_pro.inactive, monokai_pro.bg, window_border },
     { monokai_pro.active, monokai_pro.focus,  monokai_pro.focus },
@@ -213,7 +213,10 @@ static Key keys[] = {
     { MODKEY, XK_Return, spawn, SHCMD("alacritty") },
 
     // File explorer
-    { MODKEY, XK_e, spawn, SHCMD("thunar") },
+    { MODKEY, XK_e, spawn, SHCMD("pcmanfm") },
+
+    // Todoist
+    { MODKEY, XK_t, spawn, SHCMD("todoist") },
 
     // Browser
     { MODKEY, XK_n, spawn, SHCMD("google-chrome-stable") },

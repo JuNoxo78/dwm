@@ -65,6 +65,9 @@ static const char window_border[] = "#000000";
 
 static const char *colors[][3] = {
     // fg                 bg             border   
+    { monokai_pro.inactive, monokai_pro.bg, window_border },
+    { monokai_pro.active, monokai_pro.focus,  monokai_pro.focus },
+
     { onedark.inactive, onedark.bg, window_border },
     { onedark.active, onedark.focus,  onedark.focus  },
 
@@ -73,9 +76,6 @@ static const char *colors[][3] = {
 
     { nord.inactive, nord.bg, window_border },
     { nord.active, nord.focus,  nord.focus  },
-
-    { monokai_pro.inactive, monokai_pro.bg, window_border },
-    { monokai_pro.active, monokai_pro.focus,  monokai_pro.focus },
 };
 
 // -------------------------------- Workspaces ---------------------------------

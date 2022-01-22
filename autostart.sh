@@ -1,6 +1,16 @@
 #!/bin/bash
 
 dwmblocks &
+#Composer
+picom &
+#Audio
+systemctl --user restart pulseaudio.service
+start-pulseaudio-x11
+#Nitrogen
+nitrogen --restore &
+# Overlay Bar
+xob-pulse-py | xob -s pulse &
+xob-brightness-js | xob -s brightness &
 # Network
 nm-applet &
 # Automount Devices

@@ -132,6 +132,11 @@ static const char *dmenucmd[] = {
     NULL
 };
 
+/* Control Media Players */
+static const char *medplaypausecmd[] = { "playerctl", "play-pause", NULL };
+static const char *mednextcmd[] = { "playerctl", "next", NULL };
+static const char *medprevcmd[] = { "playerctl", "previous", NULL };
+
 #include <X11/XF86keysym.h>
 static Key keys[] = {
 
@@ -216,7 +221,7 @@ static Key keys[] = {
     { MODKEY, XK_e, spawn, SHCMD("pcmanfm") },
 
     // Todoist
-    { MODKEY, XK_t, spawn, SHCMD("todoist") },
+    { MODKEY, XK_t, spawn, SHCMD("~/Applications/Todoist-1.0.3_c3a7774670390291e920018686a39199.AppImage") },
 
     // Browser
     { MODKEY, XK_n, spawn, SHCMD("google-chrome-stable") },
@@ -239,6 +244,11 @@ static Key keys[] = {
     // Brightness
     {0, XF86XK_MonBrightnessUp, spawn, SHCMD("brightnessctl set +10%")},
     {0, XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl set 10%-")},
+
+    /* Keybindings for Media play/pause/next/previous */
+    { 0, XF86XK_AudioPlay, spawn, {.v = medplaypausecmd } },
+    { 0, XF86XK_AudioNext, spawn, {.v = mednextcmd } },
+    { 0, XF86XK_AudioPrev, spawn, {.v = medprevcmd } },
 
 };
 

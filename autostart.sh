@@ -26,3 +26,5 @@ volumeicon &
 megasync &
 # Bluettoh
 blueman-applet &
+#Lock for inactivity
+xautolock -time 10 -locker slock

@@ -50,7 +50,7 @@ static const struct Theme onedark = {
 static const struct Theme nord = {
     .inactive = "#4c566a",
     .active = "#ffffff",
-    .bg = "#2e3440",
+    .bg = "#2d2a2e",
     .focus = "#81a1c1"
 };
 
@@ -65,6 +65,9 @@ static const char window_border[] = "#000000";
 
 static const char *colors[][3] = {
     // fg                 bg             border   
+    { nord.inactive, nord.bg, window_border },
+    { nord.active, nord.focus,  nord.focus  },
+
     { monokai_pro.inactive, monokai_pro.bg, window_border },
     { monokai_pro.active, monokai_pro.focus,  monokai_pro.focus },
 
@@ -74,8 +77,6 @@ static const char *colors[][3] = {
     { material.inactive, material.bg, window_border },
     { material.active, material.focus,  material.focus  },
 
-    { nord.inactive, nord.bg, window_border },
-    { nord.active, nord.focus,  nord.focus  },
 };
 
 // -------------------------------- Workspaces ---------------------------------
@@ -90,6 +91,7 @@ static const Rule rules[] = {
 
     // class      instance    title       tags mask     isfloating   monitor 
     { "Gimp",     NULL,       NULL,       0,            1,           -1 },
+    { "Zoom",     NULL,       NULL,       0,            1,           -1 },
     { "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
@@ -218,13 +220,13 @@ static Key keys[] = {
     { MODKEY, XK_Return, spawn, SHCMD("alacritty") },
 
     // File explorer
-    { MODKEY, XK_e, spawn, SHCMD("pcmanfm") },
+    { MODKEY, XK_e, spawn, SHCMD("nautilus") },
 
     // Todoist
-    { MODKEY, XK_t, spawn, SHCMD("~/Applications/Todoist-1.0.3_c3a7774670390291e920018686a39199.AppImage") },
+    { MODKEY, XK_t, spawn, SHCMD("~/Applications/Todoist-1.0.7_471e9ca8578883d5b21ae682235b8003.AppImage") },
 
     // Browser
-    { MODKEY, XK_n, spawn, SHCMD("google-chrome-stable") },
+    { MODKEY, XK_n, spawn, SHCMD("microsoft-edge") },
 
     // Redshift
     { MODKEY, XK_r, spawn, SHCMD("redshift -O 2400") },
@@ -232,7 +234,7 @@ static Key keys[] = {
 
     // Screenshot
     { MODKEY, XK_s, spawn, SHCMD("scrot") },
-    { MODKEY|ShiftMask, XK_s, spawn, SHCMD("scrot -s") },
+    { MODKEY|ShiftMask, XK_s, spawn, SHCMD("scrot -s -e 'xclip -selection clipboard -t image/png -i $f'") },
 
     // ----------------- Hardware ------------------
 
